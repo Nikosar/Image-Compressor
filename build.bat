@@ -1,0 +1,1 @@
+pyinstaller --onefile -n "image_processing_0.01" src/image_processing.py
