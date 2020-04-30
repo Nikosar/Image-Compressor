@@ -1,6 +1,10 @@
 # Image-Compressor
+[Download .exe](https://github.com/Nikosar/Image-Compressor/releases/latest/download/image_processing.exe)
+
 This programm was created for compressing images.
-You can use it easily - just place in the same directory with images and run.
+You can use it easily - just place in the same directory with images and run
+
+or you can use command line
 ```bat
 image_processing.exe -s "D:\Downloads\photo" -q 60 -p 2000000
 ```
