@@ -12,7 +12,7 @@ class MyTestCase(unittest.TestCase):
         photo_input_dir = "test_photos"
         photo_output_dir = "test_photos/" + image_processing.ImageCompressor.OUTPUT_DIR
 
-        image_processing.main(working_dir=photo_input_dir, target_pixel_count=600 ** 2, quality=70)
+        image_processing.main(working_dir=photo_input_dir, target_pixel_count=1000 ** 2, quality=80)
 
         input_size = self.sum_of_file_sizes_in(photo_input_dir)
         output_size = self.sum_of_file_sizes_in(photo_output_dir)
