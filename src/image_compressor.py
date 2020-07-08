@@ -1,13 +1,11 @@
 import os
-from pathlib import Path
-import cli.app
 from PIL import Image, ImageFile
 from shutil import copyfile, rmtree
 
 
 class ImageCompressor:
     OUTPUT_DIR = "image_processing_output"
-    FORMATS = (".jpg", "jpeg", ".bmp", ".gif", "png")
+    FORMATS = (".jpg", ".jpeg", ".bmp", ".gif", ".png", ".ico")
     ImageFile.LOAD_TRUNCATED_IMAGES = True
 
     def __init__(self, working_dir_path, target_pixel_count, quality):
@@ -56,7 +54,7 @@ class ImageCompressor:
         return len([path for path in current_dir.iterdir() if self.is_processable_file(path)])
 
     def is_processable_file(self, path):
-        return path.is_file() and self.FORMATS.__contains__(path.suffix)
+        return path.is_file() and self.FORMATS.__contains__(path.suffix.lower())
 
     def mk_dir(self):
         output_dir_path = self.working_dir_path.joinpath(self.OUTPUT_DIR)
